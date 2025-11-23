@@ -1,0 +1,11 @@
+# Ignore everything at the repo root
+/*
+
+# Keep this .gitignore so Git can read the rules
+!/.gitignore
+
+# Only allow the source and include directories and their contents
+!/src/
+!/src/**
+!/include/
+!/include/**
