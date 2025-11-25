@@ -31,6 +31,7 @@ Arm joints[3] = {
 */
 
 unsigned long prevMicros = 0;
+unsigned long last_print_ms = 0;
 
 void setup()
 {
@@ -55,14 +56,14 @@ void loop()
 
     // Here you would:
     // 1) Compute desired joint velocities from your EE controller / Jacobian
-    //    float theta0_dot_des = ...;
-    //    float theta1_dot_des = ...;
-    //    float theta2_dot_des = ...;
+    //    float th0_dot_des = ...;
+    //    float th1_dot_des = ...;
+    //    float th2_dot_des = ...;
     //
     // 2) Set them as targets:
-    //    joints[0].setVelocityTarget(theta0_dot_des);
-    //    joints[1].setVelocityTarget(theta1_dot_des);
-    //    joints[2].setVelocityTarget(theta2_dot_des);
+    //    joints[0].setVelocityTarget(th0_dot_des);
+    //    joints[1].setVelocityTarget(th1_dot_des);
+    //    joints[2].setVelocityTarget(th2_dot_des);
 
     // Update all joints
     for (int i = 0; i < 3; ++i)
@@ -74,11 +75,11 @@ void loop()
     if (millis() % 100 == 0)  // rough slow print
     {
         Serial.print("th0=");
-        Serial.print(joints[0].theta);
+        Serial.print(joints[0].th);
         Serial.print("  v0=");
-        Serial.print(joints[0].theta_d);
+        Serial.print(joints[0].th_d_cmd);
         Serial.print("  a0=");
-        Serial.print(joints[0].theta_dd);
+        Serial.print(joints[0].th_dd);
         Serial.print("  pt=");
         Serial.print(joints[0].us_per_Pulse);
         Serial.print("  PPR="); Serial.print(joints[0].PPR);
