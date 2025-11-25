@@ -5,7 +5,10 @@
 !/.gitignore
 
 # Only allow the source and include directories and their contents
-!/src/
-!/src/**
-!/include/
-!/include/**
+/.pio/
+/.vscode/
+/lib/
+/test/
+/*.bin
+/*.elf
+/*.hex
