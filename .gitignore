@@ -1,5 +1,5 @@
 # Ignore everything at the repo root
-/*
+# /*
 
 # Keep this .gitignore so Git can read the rules
 !/.gitignore
