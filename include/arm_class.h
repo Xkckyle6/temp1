@@ -1,3 +1,15 @@
+// Deprecated compatibility header.
+// The functionality previously in `Arm` has been split into `JOINT_CONTROLLER`
+// and `MOTOR_CONTROLLER`. Include `joint_controller.h` to access the new class.
+
+#pragma once
+#include "joint_controller.h"
+
+// Backwards compatibility typedef: old code referencing `Arm` will still compile.
+using Arm = JOINT_CONTROLLER;
+
+// The rest of the Arm class implementation is no longer needed in this file.
+
 #pragma once
 #include <Arduino.h>
 #include <math.h>
